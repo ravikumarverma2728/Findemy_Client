@@ -1,0 +1,31 @@
+.SearchCoursePage-main-row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.search-result-number{
+    font-weight: 700;
+    font-size: 1.6rem;
+}
+.search-result-number-small{
+    text-align: end;
+    color: #6a6f73;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+.level-text{
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+.level-text-checkbox-span{
+    margin-left: -0.5rem;
+    font-size: 0.9rem;
+    color: #6a6f73;
+}
+.course-instructor-image{
+    width: 100%;
+    height: 100%;
+}
+.course-card-main-col{
+    cursor: pointer;
+}

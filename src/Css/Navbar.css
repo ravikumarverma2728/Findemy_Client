@@ -1,0 +1,132 @@
+
+.navbar-main{
+    padding: 1.9vh 0.8rem;
+    padding-left: 0.4rem;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 8%);
+    background-color: white;
+   position: relative;
+   z-index: 1010;
+   padding-top: 1.3rem;
+}
+
+.nav-udemy-image{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 0.6rem;
+    height: 2.7rem;
+}
+.nav-input-main-div{
+    position: relative;
+    width: 100%;
+}
+.nav-search-form{
+    width: 83%;
+}
+.nav-search{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    margin: 0rem 2rem;
+}
+.nav-search-icon{
+    position: absolute;
+    left: 1%;
+    top: 28%;
+    color: grey;
+   
+}
+.nav-search-input{
+    border-radius: 2rem;
+    border: 0.08rem solid #1c1d1f;
+    outline: none;
+    width: 100%;
+    padding-left: 2.5rem;
+    height: 2.7rem; 
+}
+
+.nav-cart-icon{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 0.6rem;
+    height: 2.7rem;
+}
+.navbar-links-log-in,
+.navbar-links-Sign-up{
+    color: black;
+    background-color: transparent;
+    border: 1px solid #1c1d1f;
+    position: relative;
+    align-items: center;
+    cursor: pointer;
+    display: inline-flex;
+    
+    padding: 0 .8rem;
+    justify-content: center;
+    font-weight: 500;
+    height: 2.7rem;
+    width: 100px;
+    letter-spacing: -.02rem;
+    font-size: 1rem;
+    margin-left: .4rem;
+}
+.navbar-links-Sign-up{
+    color: #fff;
+    background-color: #1c1d1f;
+}
+.navbar-links-language-icon{
+    color: black;
+    background-color: transparent;
+    border: 1px solid #1c1d1f;
+    position: relative;
+    align-items: center;
+    cursor: pointer;
+    display: inline-flex;
+    padding: 0 0.6rem;
+    justify-content: center;
+    height: 2.7rem; 
+    margin-left: .4rem;  
+}
+.after-log-in-learning-text{
+    color: black;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    padding: 0rem 0.5rem;
+    
+}
+.nav-cart-icon-after-log-in {
+    padding: 0rem 0.5rem;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 2.7rem;
+}
+.avatar-div{
+    padding-left: 0.5rem;
+}
+.log-out-a-div a{
+    color: #1c1d1f;
+}
+.after-login-name-email-main-div{
+    padding: 0.5rem;
+    border-bottom: 1px solid #d1d7dc;
+}
+
+
+
+@media only screen and (max-width: 801px) {
+    .nav-search-input{
+        width:0rem;
+        display: none;
+    }
+    .nav-udemy-image{
+        display: none;
+        width: 0rem;
+        height: 0rem;
+    }
+}

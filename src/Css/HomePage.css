@@ -1,0 +1,10 @@
+.homepage-carousel-wrapper-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.students-viewing-text{
+    font-weight: bolder;
+    font-size: 1.4rem;
+    padding-left: 0.4rem;
+}

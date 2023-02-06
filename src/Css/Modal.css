@@ -1,0 +1,29 @@
+.modal-main-row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.modal-choose-a-language-row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.modal-choose-a-language-text{
+    font-weight: 700;
+    font-size: larger;
+}
+.close-icon-col:hover{
+cursor: pointer;
+}
+.modal-ul {
+    list-style: none;
+    text-decoration: none;
+    margin: 1rem 0rem;
+}
+
+.modal-ul a{
+    color: #1c1d1f;
+}
+.modal-ul a:hover{
+    color: #401b9c;
+}

@@ -1,0 +1,110 @@
+.carousel-card-hover-main-row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.9rem 0;
+}
+.carousel-card{
+    width: 100%;
+    border: 1px solid #d1d7dc;
+    overflow: hidden;
+    position: relative;
+    padding: 0.35rem;
+    
+}
+.carousel-card:hover{
+    cursor: pointer;
+   
+}
+.carousel-card-image{
+    height: 9rem;
+}
+
+.carousel-card-body{
+    margin: 0;
+    padding: 0;
+}
+.visible-learn-python-text{
+    font-weight: bold;
+   
+    font-size: 0.9rem;
+    margin: 0;
+    padding: 0;
+
+}
+.carousel-cards-ul{
+    list-style: none;
+    padding: 0; 
+}
+.carousel-cards-ul li{
+    margin-top: 0.5rem;
+}
+.carousel-cards-ul li:before{
+    content: '✓';
+}
+.carousel-card-hover-button-row{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+.carousel-card-hover-button {
+    width: 85%;
+    height: 3rem;
+    background-color: #a435f0;
+    color: white;
+    outline: none;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-size: 1rem;
+}
+.carousel-card-hover-button:hover{
+    background-color: #8710d8;;
+}
+.carousel-card-hover-wishlist-icon{
+   border: 1px solid black;
+   padding: 0.7rem;
+   border-radius: 50%;
+   margin-left: 0.6rem;
+}
+.carousel-card-hover-wishlist-icon:hover{
+    background-color: rgba(0,0,0,.04);
+    cursor: pointer;
+}
+
+.rating-div{
+    padding: 0.1rem 0  0 0;
+    margin: 0;
+    margin-left: -0.6rem;
+    
+}
+.rating-main-div{
+   display: flex;
+   align-items: center; 
+}
+.rating-text{
+    color: #b4690e;
+    font-weight: 700;
+    font-size: 1.02rem;
+    padding-right: 0.5rem;
+    padding-top: 0.2rem;
+}
+.numOfStudents-text{
+    display: flex;
+    align-items: center;
+    margin-left: 0.5rem;
+    color: #6a6f73;
+}
+.best-seller-text-col{
+    background-color: #eceb98;
+    color: #3d3c0a;
+    width: fit-content;
+    font-weight: 700;
+    font-size: 0.8rem;
+    padding: 0.2rem;
+}
+
+
+

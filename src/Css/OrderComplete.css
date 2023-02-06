@@ -1,0 +1,47 @@
+.Order-Complete-main-row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 53vw;
+}
+.Order-Complete-main-col{
+    padding: 3rem;
+    border-radius: 1rem;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+.confetti-row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.confetti-col{
+    text-align: center;
+    
+}
+.confetti-image{
+    height: 15rem;
+    width: 20rem;
+}
+.your-order-complete-text-row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.your-order-complete-text-col{
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-align: center;
+    
+}
+.you-will-be-receiving-text-row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.you-will-be-receiving-text-col{
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: grey;
+    margin-bottom: 6rem;
+}

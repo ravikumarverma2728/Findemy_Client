@@ -1,0 +1,126 @@
+.log-in-main-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+.Sign-up-and-start-learning-text {
+    font-weight: 700;
+}
+.google-img{
+  width: 2.9rem;
+  margin-right: 0.4rem;
+}
+.log-in-google-button{
+    width: 100%;
+    height: 3rem;
+    outline: none;
+    border: none;
+    color: #1c1d1f;
+    background-color: transparent;
+    border: 1px solid #1c1d1f;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    font-weight: 700;
+}
+.log-in-google-button:hover{
+    background-color: rgba(0,0,0,.04);
+}
+.facebook-img{
+    width: 2.9rem;
+    margin-right: 0.4rem; 
+  }
+.log-in-facebook-button{
+    width: 100%;
+    height: 3rem;
+    outline: none;
+    border: none;
+    color: #1c1d1f;
+    background-color: transparent;
+    border: 1px solid #1c1d1f;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    font-weight: 700;
+}
+.log-in-facebook-button:hover{
+    background-color: rgba(0,0,0,.04);
+}
+
+.apple-img{
+    width: 2.9rem;
+    margin-right: 0.4rem; 
+  }
+.log-in-apple-button{
+    width: 100%;
+    height: 3rem;
+    outline: none;
+    border: none;
+    color: #1c1d1f;
+    background-color: transparent;
+    border: 1px solid #1c1d1f;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    font-weight: 700;
+}
+.log-in-apple-button:hover{
+    background-color: rgba(0,0,0,.04);
+}
+
+.log-in-email-box{
+    width: 100%;
+    margin: 10rem 0;
+    
+    
+}
+.log-in-password-box{
+    width: 100%;
+    margin: 10rem 0;
+
+}
+.col-margin{
+    margin: 0.25rem 0;
+}
+.log-in-button{
+    width: 100%;
+    height: 3rem;
+    background-color: #a435f0;
+    color: white;
+    outline: none;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bolder;
+}
+.log-in-button:hover{
+    background-color: #8710d8;
+}
+
+.log-in-forget-password-row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.log-in-forget-password-col{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 0.05rem solid grey;
+    width: 95%;
+    padding-bottom: 1rem;
+    
+}
+
+.log-in-forget-password-col a{
+    text-decoration: underline;
+    text-underline-offset: 0.4rem;
+    color: #5624d0;
+    font-weight: 700;
+}
+.log-in-forget-password-col a:hover{
+    color: #401b9c;
+}

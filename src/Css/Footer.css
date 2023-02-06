@@ -1,0 +1,49 @@
+.foot{
+    background-color: #1c1d1f;
+    
+}
+
+.foot-ul{
+    list-style: none;
+    text-decoration: none;
+    margin-top: 0.3rem;
+}
+a{
+    text-decoration: none;
+    color: white;
+   
+}
+.language-button{
+    background-color: transparent;
+    color: white;
+    outline: none;
+    text-align: center;
+    justify-content: center;
+    border: 1px solid white;
+    padding: 0.2rem 0.5rem;
+}
+span{
+    margin-left:0.2vw;
+    
+}
+img{
+    height: 5vh;
+    width: 9vw;
+}
+.footer-content-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem;
+}
+.language-button-wrapper{
+    display: flex;
+    justify-content: end;
+    
+}
+.footer-udemy-text{
+    color: white;
+    font-size: 0.8rem;
+}
+
+
