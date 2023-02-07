@@ -60,14 +60,14 @@ const Courses = () => {
       // post request to http://localhost:9000/carts/add
       // body = courseData
       axios
-        .post("http://localhost:9000/carts/add", courseData,{
+        .post("http://localhost:9000/carts/add", courseData, {
           headers: {
             Authorization: `Bearer ${user?.token}`,
             "Content-Type": "application/json",
-          }
+          },
         })
         .then(function (response) {
-          if(response.data.success===true){
+          if (response.data.success === true) {
             //set response.data.cartCourse in a useState ariable
           }
         });
@@ -79,28 +79,33 @@ const Courses = () => {
     <>
       <Navbar />
 
-      <div className="on-scroll-navbar on-scroll-navbar-complete-roadmap-text">
-        <div>{singleCourseData?.title}</div>
-        <div className="mt-1" style={{ display: "flex" }}>
-          <div className="on-scroll-navbar-bestseller-text-div">Bestseller</div>
-          <div className="on-scroll-navbar-span-text-col">
-            <span className="on-scroll-navbar-span-text">4.7</span>
-            <StarIcon
-              style={{
-                fontSize: "1.1rem",
-                marginLeft: "0.3rem",
-                color: "#e59819",
-              }}
-            />
-          </div>
-          <div className="on-scroll-navbar-anchor-col">
-            <a href="#">{singleCourseData?.numOfRatings}</a>
-          </div>
-          <div className="on-scroll-navbar-students-numbers-col">
-            881,653 students
+      {singleCourseData && (
+        <div className="on-scroll-navbar on-scroll-navbar-complete-roadmap-text">
+          <div>{singleCourseData?.title}</div>
+          <div className="mt-1" style={{ display: "flex" }}>
+            {singleCourseData?.isBestSeller?<div className="on-scroll-navbar-bestseller-text-div">
+              Bestseller
+            </div>:""}
+            
+            <div className="on-scroll-navbar-span-text-col">
+              <span className="on-scroll-navbar-span-text">4.7</span>
+              <StarIcon
+                style={{
+                  fontSize: "1.1rem",
+                  marginLeft: "0.3rem",
+                  color: "#e59819",
+                }}
+              />
+            </div>
+            <div className="on-scroll-navbar-anchor-col">
+              <a href="#">{singleCourseData?.numOfRatings}</a>
+            </div>
+            <div className="on-scroll-navbar-students-numbers-col">
+              {singleCourseData?.numOfStudents} students
+            </div>
           </div>
         </div>
-      </div>
+      )}
 
       <div className="main-content-wrapper">
         <div className=" row ">
@@ -123,14 +128,14 @@ const Courses = () => {
                     : "col-12 scroll-div-image-col"
                 }
               >
-                <img className="scroll-div-image" src={image} alt="image" />
+                <img className="scroll-div-image" src={singleCourseData?.thumbnail} alt="image" />
               </div>
             </div>
 
             <div className="padding-div">
               <div className="row">
                 <div className="col-12 scroll-rupee-text-col">
-                  &#x20B9;3,999
+                <span>&#36;</span> {singleCourseData?.discountedPrice}
                 </div>
               </div>
               <div className="row mt-2  scroll-div-add-to-cart-button-wishlist-row">
@@ -217,60 +222,67 @@ const Courses = () => {
           </div>
         </div>
 
-        <div className="row first-main-row">
-          <div className="col-6 ">
-            <div className="row first-main-row-first-row">
-              <div className="col-12 first-main-row-first-col">
-                {singleCourseData?.title}
+        {singleCourseData && (
+          <div className="row first-main-row">
+            <div className="col-6 ">
+              <div className="row first-main-row-first-row">
+                <div className="col-12 first-main-row-first-col">
+                  {singleCourseData?.title}
+                </div>
+              </div>
+              <div className="row first-main-row-second-row">
+                <div className="col-12 first-main-row-second-col">
+                  {singleCourseData?.description}
+                </div>
+              </div>
+              <div className="row first-main-row-third-row">
+                {singleCourseData?.isBestSeller?<div className="col-2 first-main-row-third-row-col-1">
+                  Bestseller
+                </div>:""}
+                
+                <div className="col-3 first-main-row-third-row-col-2">
+                  <span className="first-main-row-third-row-col-2-span">
+                    {singleCourseData?.rating}
+                  </span>
+                  <Rating
+                    sx={{ fontSize: "0.9rem", marginLeft: "0.2rem" }}
+                    name="half-rating-read"
+                    // value={singleCourseData?.rating}
+                    value={5}
+                    readOnly
+                    // precision={0.5}
+                  />
+                </div>
+                <div className="col-1 first-main-row-third-row-col-3  ">
+                  <a href="#">{singleCourseData?.numOfRatings}</a>
+                </div>
+                <div className="col-3 first-main-row-third-row-col-4">
+                  {singleCourseData?.numOfStudents} students
+                </div>
+              </div>
+              <div className="row first-main-row-fourth-row">
+                <div className="col-12 first-main-row-fourth-col">
+                  Created by <Link to={'#'}>{singleCourseData.author}</Link>
+                </div>
+              </div>
+              <div className="row first-main-row-fifth-row">
+                <div className="col-4  first-main-row-fifth-row-col-1">
+                  <NewReleasesIcon fontSize="small" />{" "}
+                  <span className="first-main-row-fifth-row-col-1-span">
+                    Last updated 01/2023
+                  </span>
+                </div>
+                <div className="col-3 first-main-row-fifth-row-col-2">
+                  <LanguageOutlined fontSize="small" />
+                  <span className="first-main-row-fifth-row-col-2-span">
+                    English
+                  </span>
+                </div>
               </div>
             </div>
-            <div className="row first-main-row-second-row">
-              <div className="col-12 first-main-row-second-col">
-                Become a Full-Stack Web Developer with just ONE course. HTML,
-                CSS, Javascript, Node, React, MongoDB, Web3 and DApps
-              </div>
-            </div>
-            <div className="row first-main-row-third-row">
-              <div className="col-2 first-main-row-third-row-col-1">
-                Bestseller
-              </div>
-              <div className="col-2 first-main-row-third-row-col-2 ">
-                <Rating
-                  sx={{ fontSize: "0.9rem" }}
-                  name="half-rating-read"
-                  defaultValue={5}
-                  readOnly
-                />
-              </div>
-              <div className="col-3 first-main-row-third-row-col-3 ">
-                <a href="#">{singleCourseData?.numOfRatings}</a>
-              </div>
-              <div className="col-3 first-main-row-third-row-col-4">
-                881,653 students
-              </div>
-            </div>
-            <div className="row first-main-row-fourth-row">
-              <div className="col-12 first-main-row-fourth-col">
-                Created by <a href="#">Dr.Angela Yu</a>
-              </div>
-            </div>
-            <div className="row first-main-row-fifth-row">
-              <div className="col-4  first-main-row-fifth-row-col-1">
-                <NewReleasesIcon fontSize="small" />{" "}
-                <span className="first-main-row-fifth-row-col-1-span">
-                  Last updated 01/2023
-                </span>
-              </div>
-              <div className="col-3 first-main-row-fifth-row-col-2">
-                <LanguageOutlined fontSize="small" />
-                <span className="first-main-row-fifth-row-col-2-span">
-                  English
-                </span>
-              </div>
-            </div>
+            <div className="col-3 "></div>
           </div>
-          <div className="col-3 "></div>
-        </div>
+        )}
 
         <div className="row second-main-row pb-5">
           <div className="col-6 second-main-col">
@@ -284,82 +296,36 @@ const Courses = () => {
                 <div className="row second-main-row-second-row">
                   <div className="col-6 second-main-row-second-row-col-1">
                     <ul className="second-main-row-second-row-col-1-ul">
-                      <li style={{ display: "flex" }}>
-                        <div className="done-icon-div">
-                          <DoneIcon sx={{ fontSize: "1.2rem" }} />
-                        </div>
-                        <div className="second-main-row-second-row-col-1-ul-li-span">
-                          After the course you will be able to build ANY website
-                          you want.
-                        </div>
-                      </li>
-                      <li style={{ display: "flex" }}>
-                        <div className="done-icon-div">
-                          <DoneIcon sx={{ fontSize: "1.2rem" }} />
-                        </div>
-                        <div className="second-main-row-second-row-col-1-ul-li-span">
-                          After the course you will be able to build ANY website
-                          you want.
-                        </div>
-                      </li>
-                      <li style={{ display: "flex" }}>
-                        <div className="done-icon-div">
-                          <DoneIcon sx={{ fontSize: "1.2rem" }} />
-                        </div>
-                        <div className="second-main-row-second-row-col-1-ul-li-span">
-                          After the course you will be able to build ANY website
-                          you want.
-                        </div>
-                      </li>
-                      <li style={{ display: "flex" }}>
-                        <div className="done-icon-div">
-                          <DoneIcon sx={{ fontSize: "1.2rem" }} />
-                        </div>
-                        <div className="second-main-row-second-row-col-1-ul-li-span">
-                          After the course you will be able to build ANY website
-                          you want.
-                        </div>
-                      </li>
+                      {singleCourseData?.learningOutcomes.map((val)=>{
+                        return (
+                          <li style={{ display: "flex" }}>
+                            <div className="done-icon-div">
+                              <DoneIcon sx={{ fontSize: "1.2rem" }} />
+                            </div>
+                            <div className="second-main-row-second-row-col-1-ul-li-span">
+                              {val}
+                            </div>
+                           </li>
+                        );
+                      })}
+                      
+                     
                     </ul>
                   </div>
                   <div className="col-6 second-main-row-second-row-col-2">
                     <ul className="second-main-row-second-row-col-2-ul">
-                      <li style={{ display: "flex" }}>
-                        <div className="done-icon-div">
-                          <DoneIcon sx={{ fontSize: "1.2rem" }} />
-                        </div>
-                        <div className="second-main-row-second-row-col-2-ul-li-span">
-                          After the course you will be able to build ANY website
-                          you want.
-                        </div>
-                      </li>
-                      <li style={{ display: "flex" }}>
-                        <div className="done-icon-div">
-                          <DoneIcon sx={{ fontSize: "1.2rem" }} />
-                        </div>
-                        <div className="second-main-row-second-row-col-2-ul-li-span">
-                          After the course you will be able to build ANY website
-                          you want.
-                        </div>
-                      </li>
-                      <li style={{ display: "flex" }}>
-                        <div className="done-icon-div">
-                          <DoneIcon sx={{ fontSize: "1.2rem" }} />
-                        </div>
-                        <div className="second-main-row-second-row-col-2-ul-li-span">
-                          After the course you will be able to build ANY website
-                          you want.
-                        </div>
-                      </li>
-                      <li style={{ display: "flex" }}>
-                        <div className="done-icon-div">
-                          <DoneIcon sx={{ fontSize: "1.2rem" }} />
-                        </div>
-                        <div className="second-main-row-second-row-col-2-ul-li-span">
-                          After the course you will be able to build ANY website
-                          you want.
-                        </div>
-                      </li>
+                        {singleCourseData?.learningOutcomes.map((val)=>{
+                            return (
+                              <li style={{ display: "flex" }}>
+                                <div className="done-icon-div">
+                                  <DoneIcon sx={{ fontSize: "1.2rem" }} />
+                                </div>
+                                <div className="second-main-row-second-row-col-1-ul-li-span">
+                                  {val}
+                                </div>
+                              </li>
+                            );
+                          })}
                     </ul>
                   </div>
                 </div>
@@ -394,14 +360,7 @@ const Courses = () => {
             </div>
             <div className="row second-main-row-sixth-row">
               <div className="col-12 second-main-row-sixth-row-col">
-                Welcome to the Complete Web Development Bootcamp, the only
-                course you need to learn to code and become a full-stack web
-                developer. With 150,000+ ratings and a 4.8 average, my Web
-                Development course is one of the HIGHEST RATED courses in the
-                history of Udemy! At 65+ hours, this Web Development course is
-                without a doubt the most comprehensive web development course
-                available online. Even if you have zero programming experience,
-                this course will take you from beginner to mastery.
+                {singleCourseData?.longdescription}
               </div>
             </div>
             <div className="row second-main-row-seventh-row">
@@ -411,7 +370,8 @@ const Courses = () => {
             </div>
             <div className="row second-main-row-eight-row">
               <div className="col-12 second-main-row-eight-row-col">
-                <a href="#">Dr. Angela Yu</a>
+                {/* <a href="#">Dr. Angela Yu</a> */}
+                <Link to={'#'}>{singleCourseData?.author}</Link>
               </div>
             </div>
             <div className="row second-main-row-ninth-row">
@@ -421,7 +381,7 @@ const Courses = () => {
             </div>
             <div className="row second-main-row-tenth-row">
               <div className="col-2 second-main-row-tenth-row-col-1">
-                <img className="instructor-image" src={image1} alt="image" />
+                <img className="instructor-image" src={singleCourseData?.authorImage} alt="image" />
               </div>
               <div className="col-4 second-main-row-tenth-row-col-2">
                 <div>
@@ -448,6 +408,11 @@ const Courses = () => {
                     9 Courses
                   </span>
                 </div>
+              </div>
+            </div>
+            <div className="row second-main-row-sixth-row">
+              <div className="col-12 second-main-row-sixth-row-col">
+                {singleCourseData?.authorDescription}
               </div>
             </div>
           </div>

@@ -94,8 +94,8 @@ export default function SimpleSlider() {
   return (
     <>
       <Slider {...settings}>
-        {courseDataDetails?.map((course) => {
-          return <Cards course={course} />;
+        {courseDataDetails?.map((course ,i) => {
+          return <Cards key={i} course={course} />;
         })}
       </Slider>
     </>

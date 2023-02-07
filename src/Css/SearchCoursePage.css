@@ -29,3 +29,19 @@
 .course-card-main-col{
     cursor: pointer;
 }
+
+.search-page-title{
+    font-weight: 700;
+
+}
+.search-page-description{
+    font-size: 0.9rem;
+}
+.search-page-card-author{
+    color: #6a6f73;
+    font-size: 0.8rem;
+}
+.search-page-no-of-rating{
+    font-size: 0.8rem;
+    color: #6a6f73;
+}

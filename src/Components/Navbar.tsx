@@ -14,8 +14,11 @@ import { useParams, useNavigate } from "react-router-dom";
 import { AppContext } from "../App";
 import Avatar from '@mui/material/Avatar';
 import Tooltip, { TooltipProps, tooltipClasses } from "@mui/material/Tooltip";
+import Badge from '@mui/material/Badge';
 
 const Navbar = () => {
+  const userCartLength = JSON.parse(localStorage.getItem("cart_length")!);
+  console.log(userCartLength);
   const [value, setValue] = React.useState<number | null>(2);
   const HtmlTooltip = styled(({ className, ...props }: TooltipProps) => (
     <Tooltip {...props} classes={{ popper: className }} />
@@ -55,6 +58,7 @@ const Navbar = () => {
               <form className=" nav-search-form d-flex " onSubmit={handleSubmit(onSearch)}>
                 <div className=" nav-search ">
                   {/* <form action="#" autoComplete="off"> */}
+                  
                   <SearchOutlinedIcon className="nav-search-icon" />
                   <input
                     type="text"
@@ -81,9 +85,12 @@ const Navbar = () => {
                     </Link>
                 </div>
                 <div className="nav-cart-icon-after-log-in ">
-                  <Link to={'/carts'}>
-                    <ShoppingCartOutlinedIcon sx={{color:'black'}} />
-                  </Link>
+                <Badge badgeContent={2} color="secondary">
+                      <Link to={'/carts'}>
+                        <ShoppingCartOutlinedIcon sx={{color:'black'}} />
+                      </Link>
+                </Badge>
+                  
                   
                 </div>
                 <div className="avatar-div">
@@ -94,24 +101,24 @@ const Navbar = () => {
                                       <Avatar sx={{ bgcolor: 'blue' }}>{user?.name[0]}</Avatar>
                                     </div>
                                     <div >
-                                        <div>
+                                        <div className="log-out-user-name" >
                                             {user?.name}
                                         </div>
-                                        <div>
+                                        <div className="log-out-email">
                                             {user?.email}
                                         </div>
                                     </div>
                                 </div>
                                 
                                 <div className="log-out-a-div">
-                                    <a
-                                        href=""
+                                    <Link
+                                        to={'#'}
                                         onClick={() => {
                                           logoutUser();
                                         }}
                                         >
                                           Log out
-                                    </a>
+                                    </Link>
                                 </div>
                                  
                               </>
@@ -131,9 +138,7 @@ const Navbar = () => {
           :
             <div className="d-flex">
             
-                <div className="nav-cart-icon ">
-                  <ShoppingCartOutlinedIcon />
-                </div>
+                
                 <div>
                   <NavLink className="navbar-links-log-in" to="/LogIn">
                     Log in

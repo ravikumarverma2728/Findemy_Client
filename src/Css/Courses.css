@@ -227,7 +227,10 @@ color: white;
 }
 .first-main-row-third-row-col-3{
     padding: 0;
-    width: 19%;
+    
+}
+.first-main-row-third-row-col-2-span{
+    color: #f3ca8c;
 }
 .first-main-row-third-row-col-3 a{
     text-decoration: underline;

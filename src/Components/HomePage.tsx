@@ -20,7 +20,7 @@ export type courseDataType = {
   level: string;
   isBestSeller: boolean;
   thumbnail: string;
-  Description: string;
+  description: string;
   requirements: string;
   learningOutcomes: [string];
   longdescription:string

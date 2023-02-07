@@ -1,4 +1,4 @@
-import React , {useContext,useEffect} from 'react'
+import React , {useContext,useEffect,useState} from 'react'
 import  '../Css/SignUp.css' ;
 import TextField from '@mui/material/TextField';
 import { AppContext } from "../App";
@@ -21,6 +21,7 @@ type Inputs = {
 
 
 const SignUp = () => {
+    const [passwors,setPassword]=useState("");
     const { isUserLoggedIn, setUserLoggedin ,setUser,user} = useContext(AppContext);
     const navigate = useNavigate();
     useEffect(() => {
@@ -32,6 +33,7 @@ const SignUp = () => {
      const onSubmit: SubmitHandler<Inputs> = data => {
         axios.post('http://localhost:9000/users/signup',data).then(function (response) {
             console.log(response);
+            if(response.data.message=="User already exists!")alert("User already exists!");
             if(response.data._id){
                 const userInfromation = {
                     id: response.data._id,
@@ -53,7 +55,7 @@ const SignUp = () => {
     <Navbar/>
     <form  onSubmit={handleSubmit(onSubmit)}>
 
-        <div className='row sign-up-main-wrapper mt-4' >
+        <div className='row sign-up-main-wrapper ' >
             <div className='col-3 '>
                 <div className='row'>
                     <div className='col-12 Sign-up-and-start-learning-text '>
@@ -62,20 +64,62 @@ const SignUp = () => {
                 </div>
                 <div className='row'>
                     <div className='col-12 col-margin'>
-                    <TextField {...register("name", { required: true })} className='sign-up-full-name-box' id="outlined-basic" label="Full name" variant="outlined"  />
-                    {errors.name && <span>This field is required</span>}
+                    <TextField 
+                    className='sign-up-full-name-box' 
+                    id="outlined-basic" 
+                    label="Full name" 
+                    variant="outlined" 
+                    type="text" 
+                    error={!!errors.name}
+                    helperText={errors.name?.message?.toString()}
+                    {...register('name', {
+                        required: {
+                            value: true,
+                            message: "Name cannot be empty"
+                        }
+                    })}/>
+                    
                     </div>
                 </div>
                 <div className='row'>
                     <div className='col-12 col-margin'>
-                        <TextField {...register("email", { required: true })} className='sign-up-full-name-box' id="outlined-basic" label="Email" variant="outlined" />
-                        {errors.email && <span>This field is required</span>}
+                        <TextField 
+                        className='sign-up-full-name-box' 
+                        id="outlined-basic"
+                        label="Email" 
+                        variant="outlined"
+                         type="email"
+                         error={!!(errors.email?.message)}
+                         helperText={errors.email?.message?.toString()}
+                         {...register("email", { required: {value:true,message:"Please enter your email"}})} 
+                          />
+                          
+                        {/* {errors.email && <span>This field is required</span>} */}
                     </div>
                 </div>
                 <div className='row'>
                     <div className='col-12 col-margin'>
-                        <TextField {...register("password", { required: true })} className='sign-up-full-name-box' id="outlined-basic" label="Password" variant="outlined" type="password" />
-                        {errors.password && <span>This field is required</span>}
+                        <TextField
+                         className='sign-up-full-name-box' id="outlined-basic" 
+                         label="Password" 
+                         variant="outlined" 
+                         type="password" 
+                         error={!!errors.password}
+                         helperText={errors.password?.message?.toString()}
+                         {...register('password', {
+                            // onChange: (event) => {
+                            //     setPassword(event.target.value)
+                            // },
+                            minLength: {
+                              value: 8,
+                              message: "Please enter a minimum of 8 characters"
+                          },
+                          required: {
+                              value: true,
+                              message: "Please enter your password"
+                          }
+                          })}/>
+
                     </div>
                 </div>
                 
@@ -113,20 +157,7 @@ const SignUp = () => {
     </form>
         
 
-        <div className='footer-above-extra-main-wrapper'>
-            <div className='footer-above-extra-main-text-wrapper'>
-                Top companies choose <a href='#'>Udemy Business</a> to build in-demand career skills.
-            </div>
-            <div className='footer-above-extra-main-image-wrapper'>
-
-              <img  src={image1} alt="image" />
-              <img  src={image2} alt="image" />
-              <img  src={image3} alt="image" />
-              <img  src={image4} alt="image" />
-              <img  src={image5} alt="image" />
-
-            </div>
-        </div>
+        
 
     <Footer/>
     </>

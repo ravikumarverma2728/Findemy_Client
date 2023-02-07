@@ -1,0 +1,118 @@
+.cart-page-main-row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cart-page-course-instructor-image{
+    width: 100%;
+    height: 100%;
+}
+.shopping-cart-text-col{
+    font-weight: 700;
+    font-size: 2.6rem;
+    padding: 0rem;
+}
+.course-in-cart-text-col{
+    border-bottom: 1px solid #d1d7dc;
+    padding: 0rem;
+    font-weight: 700;
+}
+.cart-page-image-col{
+    padding: 0rem;
+}
+.remove-button-col{
+    display: flex;
+    justify-content: end;
+}
+.save-for-later-button-col{
+    display: flex;
+    justify-content: end;
+}
+.move-to-wishlist-button-col{
+    display: flex;
+    justify-content: end;
+}
+.remove-button{
+    color: #5624d0;
+    background-color: transparent;
+    min-width: auto;
+    padding: 0;
+    border: none;
+}
+.save-for-later-button{
+    color: #5624d0;
+    background-color: transparent;
+    min-width: auto;
+    padding: 0;
+    border: none;
+}
+.move-to-wishlist-button{
+    color: #5624d0;
+    background-color: transparent;
+    min-width: auto;
+    padding: 0;
+    border: none;
+}
+.cart-page-price-col{
+    width: 13%;
+}
+.cart-page-discount-price-col{
+    text-align: end;
+    font-weight: 700;
+    color: #a435f0;
+}
+.cart-page-original-price-col{
+    text-align: end;
+    color: #6a6f73;
+    text-decoration: line-through;
+}
+.cart-page-total-text-col{
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #6a6f73;
+}
+.cart-page-right-col-discount-price{
+    font-weight: 700;
+    font-size: 2.1rem;
+}
+.cart-page-right-col-original-price{
+    color: #6a6f73;
+    text-decoration: line-through;
+}
+.cart-page-card-title-text{
+    font-weight: 700;
+}
+.cart-page-author-title-text{
+    font-size: 0.8rem;
+    color: #6a6f73;
+}
+.cart-page-best-seller-col{
+    background-color: #eceb98;
+    color: #3d3c0a;
+    font-weight: 800;
+    font-size: 0.7rem;
+    padding: 0.2rem;
+}
+.cart-course-rating-div{
+    margin-left: 0.7rem;
+}
+.cart-course-num-of-rating-div{
+    margin-left: 0.7rem;
+    color: #6a6f73;
+    font-size: 0.8rem;
+}
+.cart-page-rating-number-div{
+    color: #6a6f73;
+    font-weight: 600;
+    margin-left: 0.7rem;
+    color: #b4690e;
+}
+.cart-is-empty-text{
+    text-align: center;
+    font-weight: 700;
+    font-size: 2.4rem;
+    height: 75vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -21,7 +21,7 @@
     width: 100%;
 }
 .nav-search-form{
-    width: 83%;
+    width: 85%;
 }
 .nav-search{
     display: flex;
@@ -112,12 +112,23 @@
 .log-out-a-div a{
     color: #1c1d1f;
 }
+.log-out-a-div{
+    font-size: 1rem;
+    padding: 0.6rem;
+}
 .after-login-name-email-main-div{
     padding: 0.5rem;
     border-bottom: 1px solid #d1d7dc;
 }
-
-
+.log-out-user-name{
+    margin-left: 0.6rem;
+    font-weight: 700;
+    font-size: 1rem;
+}
+.log-out-email{
+    margin-left: 0.6rem;
+    
+}
 
 @media only screen and (max-width: 801px) {
     .nav-search-input{

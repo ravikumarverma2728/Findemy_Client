@@ -18,6 +18,8 @@ type Inputs = {
 
 const LogIn = () => {
   const navigate = useNavigate();
+  const [passwors,setPassword]=useState("");
+  
   const { isUserLoggedIn, setUserLoggedin ,setUser,user} = useContext(AppContext);
   useEffect(() => {
     if (isUserLoggedIn == true) {
@@ -46,6 +48,7 @@ const LogIn = () => {
         localStorage.setItem("user", JSON.stringify(userInfromation));
         setUserLoggedin(true);
         setUser(userInfromation);
+
       });
       
   };
@@ -87,29 +90,41 @@ const LogIn = () => {
             </div>
             <div className="row">
               <div className="col-12 col-margin">
-                <TextField
-                  {...register("email", { required: true })}
-                  className="log-in-email-box "
-                  autoFocus={false}
-                  id="outlined-basic"
-                  label="Email"
-                  variant="outlined"
-                />
-                {errors.email && <span>This field is required</span>}
+                  <TextField 
+                      className='sign-up-full-name-box' 
+                      id="outlined-basic"
+                      label="Email" 
+                      variant="outlined"
+                      type="email"
+                      error={!!(errors.email?.message)}
+                      helperText={errors.email?.message?.toString()}
+                      {...register("email", { required: {value:true,message:"Please enter your email"}})} 
+                  />
+                
               </div>
             </div>
             <div className="row">
               <div className="col-12 col-margin">
-                <TextField
-                  {...register("password", { required: true })}
-                  className="log-in-password-box"
-                  autoFocus={false}
-                  id="outlined-basic"
-                  label="Password"
-                  variant="outlined"
-                  type="password"
-                />
-                {errors.password && <span>This field is required</span>}
+              <TextField
+                         className='sign-up-full-name-box' id="outlined-basic" 
+                         label="Password" 
+                         variant="outlined" 
+                         type="password" 
+                         error={!!errors.password}
+                         helperText={errors.password?.message?.toString()}
+                         {...register('password', {
+                            onChange: (event) => {
+                                setPassword(event.target.value)
+                            },
+                            minLength: {
+                              value: 8,
+                              message: "Please enter a minimum of 8 characters"
+                          },
+                          required: {
+                              value: true,
+                              message: "Please enter your password"
+                          }
+                          })}/>
               </div>
             </div>
 

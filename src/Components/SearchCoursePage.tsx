@@ -38,20 +38,17 @@ const SearchCoursePage = () => {
     return (
       <div className="row mt-3">
         <div className="col-4">
-          <img className="course-instructor-image" src={image1} alt="" />
+          <img className="course-instructor-image" src={courseData.thumbnail} alt="" />
         </div>
-        <div className="col-8">
-          <div>{courseData.title}</div>
-          <div>
-            All-in-one <strong>Guitar</strong> Course, Fingerstyle{" "}
-            <strong>Guitar</strong>, Blues <strong>Guitar</strong>, Acoustic{" "}
-            <strong>Guitar</strong>, Electric <strong>Guitar</strong> &
-            Fingerpicking Guitarra
+        <div className="col-8 ">
+          <div className="search-page-title">{courseData.title}</div>
+          <div className="search-page-description">
+            {courseData.description}
           </div>
-          <div>Erich Andreas</div>
-          <div>
-            <Rating value={4} readOnly />
-            <span>(38,080)</span>
+          <div className="search-page-card-author">{courseData.author}</div>
+          <div >
+            <Rating sx={{fontSize:'small'}}  value={4} readOnly />
+            <span className="search-page-no-of-rating">(38,080)</span>
           </div>
           {/* <div>
           <span>40 total hours</span>

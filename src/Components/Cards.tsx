@@ -11,6 +11,7 @@ import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlin
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { courseData, courseDataType } from "./HomePage";
+import DoneIcon from "@mui/icons-material/Done";
 
 type CardProps = {
   course: courseDataType;
@@ -38,30 +39,26 @@ const Cards = ({ course }: CardProps) => {
           <>
             <div className="row  carousel-card-hover-main-row">
               <div className="col-11">
-                <h5>Learn Python: The complete Python Programming Course</h5>
+                <h5>{course.title}</h5>
                 <div>
                   Updated <span>September 2015</span>
                 </div>
-                <div>
-                  Learn A-Z everything about Python, from the basics, to
-                  advanced topics like Python GUI, Python Data Analysis, and
-                  more!
+                <div className="mt-1">
+                  {course.description}
                 </div>
 
                 <ul className="carousel-cards-ul mt-2">
-                  <li>create their own Python Programs</li>
-                  <li>Become an experienced Python Programmer</li>
-                  <li>Parse the Web and Create their own Games</li>
+                     {course?.learningOutcomes.map((val)=>{
+                        return (
+                          <li style={{ display: "flex" }}>
+                            
+                            <div className="second-main-row-second-row-col-1-ul-li-span">
+                              {val}
+                            </div>
+                           </li>
+                        );
+                      })}
                 </ul>
-                <div className="carousel-card-hover-button-row">
-                  <button type="button" className="carousel-card-hover-button">
-                    Add to cart
-                  </button>
-
-                  <div className=" carousel-card-hover-wishlist-icon">
-                    <FavoriteBorderOutlinedIcon />
-                  </div>
-                </div>
               </div>
             </div>
           </>

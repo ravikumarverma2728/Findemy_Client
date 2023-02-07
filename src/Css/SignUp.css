@@ -2,7 +2,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    
+    margin-top: 4rem;
+    margin-bottom: 3rem;
 }
 .Sign-up-and-start-learning-text {
     font-weight: 700;

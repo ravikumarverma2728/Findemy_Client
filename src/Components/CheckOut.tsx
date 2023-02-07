@@ -8,6 +8,7 @@ import LockIcon from '@mui/icons-material/Lock';
 import image1 from '../Images/394676_ce3d_5.jpg';
 import image2 from '../Images/IMG-20230125-WA0013.jpg';
 
+
 import { fontSize } from '@mui/system';
 const CheckOut = () => {
   return (
@@ -177,7 +178,10 @@ const CheckOut = () => {
                         </div>
                         <div className='row'>
                             <div className='col-12 proceed-button-col'>
-                            <button type="button" className="proceed-button">Proceed</button>
+                                <Link to={'/OrderComplete'}>
+                                    <button type="button" className="proceed-button">Proceed</button>
+                                </Link>
+                            
                             </div>
                         </div>
                         <div className='row mt-2'>

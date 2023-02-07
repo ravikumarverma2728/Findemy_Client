@@ -5,7 +5,7 @@ import Navbar2 from './Navbar2' ;
 const OrderComplete = () => {
   return (
     <>
-        <Navbar2/>
+      
         <div className='row Order-Complete-main-row '>
             <div className='col-6 Order-Complete-main-col  '>
                 

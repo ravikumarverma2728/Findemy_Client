@@ -11,9 +11,16 @@ import CheckOut from "./Components/CheckOut";
 import Courses from "./Components/Courses";
 import SearchCoursePage from "./Components/SearchCoursePage";
 // const courseData = createContext<>({false});
-import { UserData } from "./Utils/interface";
+
 import CartPage from "./Components/CartPage";
 export const AppContext = createContext<any>(null);
+ interface UserData {
+  id: string;
+  name: string;
+  email: string;
+  token: string;
+}
+
 function App() {
   const userData: UserData = JSON.parse(localStorage.getItem("user")!);
   const [user, setUser] = useState<UserData | null>(userData ? userData : null);
